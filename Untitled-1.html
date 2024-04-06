@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marine Cargo Insurance Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f0; /* Light pink background */
+        }
+        #container {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff; /* White container background */
+        }
+        h1 {
+            color: #ff66b2; /* Dark pink heading color */
+        }
+        label {
+            color: #ff66b2; /* Dark pink label color */
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #ff66b2; /* Dark pink button background */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 18px;
+            color: #ff66b2; /* Dark pink result text color */
+            margin-top: 10px;
+        }
+        #logo {
+            animation: spin 3s infinite linear; /* Logo animation */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Marine Cargo Insurance Calculator</h1>
+        <img src="C:\Users\harsh\Desktop\CALCULATOR\company Logo Harsh.gif" alt="Harsh Industries Logo" id="logo"> <!-- Replace "your_logo.gif" with your actual logo file -->
+        <form id="insuranceForm">
+            <label for="invoiceValue">Enter Value of Invoice (INR):</label>
+            <input type="number" id="invoiceValue" required>
+            <button type="button" onclick="calculateInsurance()">Calculate</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateInsurance() {
+            const invoiceValue = parseFloat(document.getElementById('invoiceValue').value);
+            const insuranceFee = invoiceValue / 2824.699;
+            document.getElementById('result').textContent = `Marine Cargo Insurance Fee: ₹${insuranceFee.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
